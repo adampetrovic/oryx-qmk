@@ -1,6 +1,8 @@
 #include QMK_KEYBOARD_H
 #include "version.h"
 #include "i18n.h"
+#include "features/achordion.h"
+
 #define MOON_LED_LEVEL LED_LEVEL
 #define ML_SAFE_RANGE SAFE_RANGE
 
@@ -8,8 +10,6 @@ enum custom_keycodes {
   RGB_SLD = ML_SAFE_RANGE,
   MAC_LOCK,
 };
-
-
 
 enum tap_dance_codes {
   DANCE_0,
@@ -182,6 +182,7 @@ bool rgb_matrix_indicators_user(void) {
 }
 
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
+  if (!process_achordion(keycode, record)) { return false; }
   switch (keycode) {
     case MAC_LOCK:
       HCS(0x19E);
@@ -290,3 +291,7 @@ tap_dance_action_t tap_dance_actions[] = {
         [DANCE_0] = ACTION_TAP_DANCE_FN_ADVANCED(on_dance_0, dance_0_finished, dance_0_reset),
         [DANCE_1] = ACTION_TAP_DANCE_FN_ADVANCED(NULL, dance_1_finished, dance_1_reset),
 };
+
+void housekeeping_task_user(void) {
+  achordion_task();
+}

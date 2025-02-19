@@ -4,15 +4,15 @@
 */
 
 #undef TAPPING_TERM
-#define TAPPING_TERM 205
+#define TAPPING_TERM 165
 
 #define PERMISSIVE_HOLD
 
 #undef RGB_MATRIX_TIMEOUT
-#define RGB_MATRIX_TIMEOUT 120000
+#define RGB_MATRIX_TIMEOUT 900000
 
 #define USB_SUSPEND_WAKEUP_DELAY 0
-#define SERIAL_NUMBER "NXaXB/3vvVVB"
+#define SERIAL_NUMBER "NXaXB/eaamLE"
 #define LAYER_STATE_8BIT
 #define COMBO_COUNT 1
 #define HCS(report) host_consumer_send(record->event.pressed ? report : 0); return false

@@ -77,35 +77,35 @@ combo_t key_combos[COMBO_COUNT] = {
 uint16_t get_tapping_term(uint16_t keycode, keyrecord_t *record) {
     switch (keycode) {
         case MT(MOD_LGUI, KC_A):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case MT(MOD_LALT, KC_S):
-            return TAPPING_TERM + 185;
+            return TAPPING_TERM + 145;
         case MT(MOD_LCTL, KC_D):
-            return TAPPING_TERM + 185;
+            return TAPPING_TERM + 145;
         case MT(MOD_LSFT, KC_F):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case KC_G:
-            return TAPPING_TERM -5;
+            return TAPPING_TERM -45;
         case KC_X:
-            return TAPPING_TERM + 185;
+            return TAPPING_TERM + 145;
         case TD(DANCE_0):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case LT(6,KC_BSPC):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case MT(MOD_LSFT, KC_J):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case MT(MOD_LCTL, KC_K):
-            return TAPPING_TERM + 185;
+            return TAPPING_TERM + 145;
         case MT(MOD_LALT, KC_L):
-            return TAPPING_TERM + 185;
+            return TAPPING_TERM + 145;
         case MT(MOD_LGUI, KC_SCLN):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case KC_DOT:
-            return TAPPING_TERM + 185;
+            return TAPPING_TERM + 145;
         case TD(DANCE_1):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         case LT(3,KC_ENTER):
-            return TAPPING_TERM + 25;
+            return TAPPING_TERM -15;
         default:
             return TAPPING_TERM;
     }
